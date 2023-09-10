@@ -9,12 +9,12 @@ import Person6 from "../images/team/papuss.png";
 
 function Team() {
   const teamPpl = [
-    { img: Person1, name: "Luke Miller", job: "Salesman" },
-    { img: Person2, name: "Michael Diaz", job: "Business Owner" },
-    { img: Person3, name: "Briana Ross", job: "Photographer" },
+    { img: Person1, name: "Thomas Miller", job: "Salesman" },
+    { img: Person2, name: "Chenique Jacobs", job: "Business Owner" },
+    { img: Person3, name: "sobantu Ross", job: "Photographer" },
     { img: Person4, name: "Lauren Rivera", job: "Car Detailist" },
     { img: Person5, name: "Jordy Meye", job: "Mechanic" },
-    { img: Person6, name: "Chenique Jacobs", job: "Menager" },
+    { img: Person6, name: "Antthony smith", job: "Menager" },
   ];
   return (
     <>
@@ -42,7 +42,7 @@ function Team() {
               <h2>Book a truck by getting in touch with us</h2>
               <span>
                 <i className="fa-solid fa-phone"></i>
-                <h3>(123) 456-7869</h3>
+                <h3>(+27) 49768637</h3>
               </span>
             </div>
           </div>
