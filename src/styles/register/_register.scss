@@ -1,0 +1,39 @@
+
+@use "../global/" as *;
+
+
+/* Assuming you have a class or ID for your registration form container, e.g., .registration-form */
+.registration-form {
+    display: flex;
+    justify-content: center; /* Center the form horizontally */
+    align-items: center; /* Center the form vertically */
+    height: 100vh; /* Make the form occupy the full viewport height */
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center form elements horizontally */
+      width: 100%;
+      max-width: 400px; /* Set a maximum width for the form */
+  
+      .form-group {
+        margin-bottom: 20px;
+        width: 100%;
+  
+        label {
+          font-size: 24px; /* Increase label font size */
+        }
+  
+        input {
+          font-size: 20px; /* Increase input font size */
+          padding: 10px; /* Add padding to input fields */
+          width: 100%;
+        }
+      }
+  
+      button {
+        font-size: 24px; /* Increase button font size */
+      }
+    }
+  }
+  
