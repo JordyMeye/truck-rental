@@ -19,7 +19,7 @@ function TruckBox({ data, truckID }) {
           {/* description */}
           <div className="pick-description">
             <div className="pick-description__price">
-              <span>${truck.price}</span>/ rent per day
+              <span>R{truck.price}</span>/ rent per day
             </div>
             <div className="pick-description__table">
               <div className="pick-description__table__col">

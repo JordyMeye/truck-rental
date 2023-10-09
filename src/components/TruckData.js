@@ -9,7 +9,7 @@ export const TRUCK_DATA = [
   [
     {
       name: "truck1",
-      price: "37",
+      price: "2300",
       img: truck1,
       model: "Ford F-150",
       mark: "Ford",
@@ -23,7 +23,7 @@ export const TRUCK_DATA = [
   [
     {
       name: "truck2",
-      price: "45",
+      price: "2050",
       img: truck2,
       model: "Chevrolet",
       mark: "Siverado",
@@ -37,7 +37,7 @@ export const TRUCK_DATA = [
   [
     {
       name: "truck3",
-      price: "30",
+      price: "3000",
       img: truck3,
       model: "Tacoma",
       mark: "Toyota",
@@ -51,7 +51,7 @@ export const TRUCK_DATA = [
   [
     {
       name: "truck4",
-      price: "35",
+      price: "3500",
       img: truck4,
       model: "Frontier",
       mark: "Nissan",
@@ -65,7 +65,7 @@ export const TRUCK_DATA = [
   [
     {
       name: "truck5",
-      price: "50",
+      price: "2700",
       img: truck5,
       model: "GMZ Sierra",
       mark: "Nissan",
@@ -79,7 +79,7 @@ export const TRUCK_DATA = [
   [
     {
       name: "truck6",
-      price: "25",
+      price: "5000",
       img: truck6,
       model: "Ram 1500",
       mark: "Ram",

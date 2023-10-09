@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios"
 
 
@@ -15,17 +15,18 @@ function Register() {
   const [surname, setSurname]= useState("")
   const [email, setEmail] = useState("")
   const [address, setAddress] = useState("")
-  const [licenseNumber , setLicenseNumber ] = useState("")
+  const [password , setPassword ] = useState("")
 
   async function save(event) {
     event.preventDefault();
     try {
       const response = await axios.post("http://localhost:8080/customer/create", {
-        name: name,
+      
+      name: name,
         surname: surname,
         email: email,
         address: address,
-        licenseNumber: licenseNumber,
+        password: password,
       });
       if (response.status === 200) {
         alert("User Registration Successfully");
@@ -34,7 +35,7 @@ function Register() {
       setSurname("");
       setEmail("");
       setAddress("");
-      setLicenseNumber("");
+      setPassword("");
     } else {
       alert("Registration Failed!");
     }
@@ -197,19 +198,19 @@ function Register() {
 
           <div className="form-group" style={{ marginBottom: "20px", width: "100%" }}>
             <label
-              htmlFor="licenseNumber"
+              htmlFor="password"
               style={{
                 fontSize: "15px",
               }}
             >
-              License Number:
+              Password:
             </label>
             <input
               type="text"
-              name="licenseNumber"
-              value={licenseNumber}
+              name="password"
+              value={password}
               onChange={(event) =>{
-                setLicenseNumber(event.target.value);
+                setPassword(event.target.value);
               }} 
               style={{
                 fontSize: "15px",

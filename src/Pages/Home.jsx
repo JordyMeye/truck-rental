@@ -15,7 +15,7 @@ function Home() {
       
       <PickTruck />
       <Banner />
-      <ChooseUs />
+      {/* <ChooseUs /> */}
       
      
       
