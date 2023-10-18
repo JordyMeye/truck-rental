@@ -12,7 +12,9 @@ import AddCustomer from "./Compo/customer/AddCustomer";
 import CustomerViews from "./Compo/customer/CustomerViews";
 import Nav from "./Compo/common/Nav";
 
-
+import AdminView from "./Compo/admin/AdminView";
+import AddAdmin from "./Compo/admin/AddAdmin";
+import EditAdmin from "./Compo/admin/EditAdmin";
 
 
 
@@ -54,10 +56,29 @@ function App() {
 						exact
 						path="/add-customers"
 						element={<AddCustomer />}></Route>
+
+        <Route
+						exact
+						path="/view-admin"
+						element={<AdminView />}>
+            </Route>
+
+            <Route
+						exact
+						path="/add-admin"
+						element={<AddAdmin />}>
+            </Route>
+
+            <Route
+						exact
+						path="/edit-admin/:id"
+						element={<EditAdmin />}>
+            </Route>
         
       </Routes>
       
     </>
+    
   );
 }
 

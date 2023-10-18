@@ -35,6 +35,19 @@ const Nav = () => {
                 Add New Customer
               </Link>
             </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to={"/view-admin"}>
+                  View All Admin
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to={"/add-admin"}>
+                  Add New Admin
+              </Link>
+            </li>
+
           </ul>
         </div>
       </div>
