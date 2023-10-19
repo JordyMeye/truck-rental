@@ -12,15 +12,21 @@ const CustomerViews = () => {
 
   const loadCustomers = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/customer/getAll");
-      if (response.status === 200) {
+      const response = await axios.get("http://localhost:8080/customer/getAll", {
+        validateStatus: ()=>{
+          return true;
+        } // Prevent Axios from following redirects
+      }
+      );
+  
+      if (response.status === 302) {
         setCustomers(response.data);
       }
     } catch (error) {
       console.error("Error loading customers:", error);
     }
   };
-
+  
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8080/customer/delete/${id}`);
@@ -48,7 +54,7 @@ const CustomerViews = () => {
         <tbody className="text-center">
           {customers.map((customer, index) => (
             <tr key={customer.customerId}>
-              <th scope="row">{index + 1}</th>
+              <td>{customer.customerId}</td>
               <td>{customer.name}</td>
               <td>{customer.surname}</td>
               <td>{customer.email}</td>

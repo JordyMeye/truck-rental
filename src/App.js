@@ -9,6 +9,8 @@ import "/node_modules/bootstrap/dist/js/bootstrap.min.js";
 
 import AddCustomer from "./Compo/customer/AddCustomer";
 
+import EditCustomer from "./Compo/customer/EditCustomer";
+
 import CustomerViews from "./Compo/customer/CustomerViews";
 import Nav from "./Compo/common/Nav";
 
@@ -26,10 +28,12 @@ import Contact from "./Pages/Contact";
 
 
 function App() {
+
+  
   return (
     <>
       <Navbar />
-      <Nav />
+       <Nav /> 
       <Routes>
 
      
@@ -54,6 +58,13 @@ function App() {
 						exact
 						path="/add-customers"
 						element={<AddCustomer />}></Route>
+
+
+            
+       <Route
+						exact
+						path="/edit-customer/:id"
+						element={<EditCustomer />}></Route>
         
       </Routes>
       
