@@ -12,7 +12,12 @@ const AdminView = () => {
 
     const loadAdmin = async ()=>{
         try{
-            const response = await axios.get("http://localhost:8080/admin/getAll");
+            const response = await axios.get("http://localhost:8080/admin/getAll",{
+            validateStatus: ()=>{
+                return true;
+            }
+        }
+            );
             if (response.status === 200){
                 setAdmin(response.data);
             }
@@ -47,7 +52,7 @@ const AdminView = () => {
                 <tbody className="text-center">
                     {admin.map((admin, index) => (
                         <tr key={admin.adminId}>
-                            <th scope="row">{index + 1}</th>
+                            <td>{admin.adminId}</td>
                             <td>{admin.name}</td>
                             <td>{admin.surname}</td>
                             <td>{admin.email}</td>

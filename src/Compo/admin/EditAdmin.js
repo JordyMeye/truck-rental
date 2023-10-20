@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 const EditAdmin = () => {
@@ -14,14 +14,14 @@ const EditAdmin = () => {
     });
     const { name, surname, email } = admin;
 
-    useEffect(() => {
-        loadAdmin();
-    }, []);
-
-    const loadAdmin = async ()=>{
-            const response = await axios.get(`http://localhost:8080/admin/admin/${id}`);
+    const loadAdmin = useCallback(async ()=>{
+            const response = await axios.get(`http://localhost:8080/admin/read/${id}`);
                 setAdmin(response.data);
-    };
+    }, [id]);
+
+    useEffect(() => {
+      loadAdmin();
+  }, [loadAdmin]);
   
     const handleInputChange = (e) => {
       setAdmin({
@@ -32,7 +32,7 @@ const EditAdmin = () => {
   
     const updateAdmin = async (e) => {
       e.preventDefault();
-      await axios.put(`http://localhost:8080/admin/update${id}`, admin);
+      await axios.post(`http://localhost:8080/admin/update`, admin);
       navigate("/view-admin");
     };
 
@@ -110,4 +110,4 @@ const EditAdmin = () => {
     );
 }
 
-export default EditAdmin
+export default EditAdmin;
