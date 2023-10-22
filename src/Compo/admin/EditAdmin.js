@@ -1,45 +1,52 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const EditAdmin = () => {
-    let navigate = useNavigate();
+const AddAdmin = () => {
+  let navigate = useNavigate();
+  const [admin, setAdmin] = useState({
+    name: "",
+    surname: "",
+    email: "",
+  });
+  const { name, surname, email } = admin;
 
-    const {id} =useParams();
-
-    const [admin, setAdmin] = useState({
-      name: "",
-      surname: "",
-      email: ""
+  const handleInputChange = (e) => {
+    setAdmin({
+      ...admin,
+      [e.target.name]: e.target.value,
     });
-    const { name, surname, email } = admin;
+  };
 
-    useEffect(() => {
-        loadAdmin();
-    }, []);
+  const generateAdminId = () => {
+    // Replace this with your actual logic for generating a unique ID
+    return "generated-id";
+  };
 
-    const loadAdmin = async ()=>{
-            const response = await axios.get(`http://localhost:8080/admin/admin/${id}`);
-                setAdmin(response.data);
+  const saveAdmin = async (e) => {
+    e.preventDefault();
+
+    // Construct the admin object
+    const adminData = {
+      adminId: generateAdminId(), // Replace with your ID generation logic
+      name,
+      surname,
+      email,
     };
-  
-    const handleInputChange = (e) => {
-      setAdmin({
-        ...admin,
-        [e.target.name]: e.target.value,
-      });
-    };
-  
-    const updateAdmin = async (e) => {
-      e.preventDefault();
-      await axios.put(`http://localhost:8080/admin/update${id}`, admin);
+
+    try {
+      // Send the POST request to the server
+      await axios.post("http://localhost:8080/admin/update", adminData);
       navigate("/view-admin");
-    };
+    } catch (error) {
+      console.error("Error saving admin:", error);
+    }
+  };
 
-    return(
-<div className="col-sm-8 py-2 px-5 offset-2 shadow">
-      <h2 className="mt-5">Edit Admin</h2>
-      <form onSubmit={(e) => updateAdmin(e)}>
+  return (
+    <div className="col-sm-8 py-2 px-5 offset-2 shadow">
+      <h2 className="mt-5">Add Admin</h2>
+      <form onSubmit={(e) => saveAdmin(e)}>
         <div className="input-group mb-5">
           <label className="input-group-text" htmlFor="name">
             Name
@@ -87,27 +94,20 @@ const EditAdmin = () => {
 
         <div className="row mb-5">
           <div className="col-sm-2">
-            <button
-              type="submit"
-              className="btn btn-outline-success btn-lg"
-            >
+            <button type="submit" className="btn btn-outline-success btn-lg">
               Save
             </button>
           </div>
 
           <div className="col-sm-2">
-            <Link
-              to={"/view-admin"}
-              type="submit"
-              className="btn btn-outline-warning btn-lg"
-            >
+            <Link to="/view-admin" className="btn btn-outline-warning btn-lg">
               Cancel
             </Link>
           </div>
-         </div>
-        </form>
-       </div>
-    );
-}
+        </div>
+      </form>
+    </div>
+  );
+};
 
-export default EditAdmin
+export default AddAdmin;
