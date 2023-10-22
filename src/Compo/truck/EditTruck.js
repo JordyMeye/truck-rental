@@ -93,7 +93,7 @@ const EditTruck = () => {
             value={availability}
             onChange={(e) => handleInputChange(e)}
           />
-        </div>
+        </div> 
 
         <div className="input-group mb-5">
           <label className="input-group-text" htmlFor="licensePlate">
