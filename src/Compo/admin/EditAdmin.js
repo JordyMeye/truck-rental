@@ -1,7 +1,39 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const EditAdmin = () => {
+  
+    let navigate = useNavigate();
+
+    const {id} =useParams();
+
+    const [admin, setAdmin] = useState({
+      name: "",
+      surname: "",
+      email: ""
+    });
+    const { name, surname, email } = admin;
+
+    const loadAdmin = useCallback(async ()=>{
+            const response = await axios.get(`http://localhost:8080/admin/read/${id}`);
+                setAdmin(response.data);
+    }, [id]);
+
+    useEffect(() => {
+      loadAdmin();
+  }, [loadAdmin]);
+  
+    const handleInputChange = (e) => {
+      setAdmin({
+        ...admin,
+        [e.target.name]: e.target.value,
+      });
+    };
+  
+    const updateAdmin = async (e) => {
+      e.preventDefault();
+      await axios.post(`http://localhost:8080/admin/update`, admin);
 const AddAdmin = () => {
   let navigate = useNavigate();
   const [admin, setAdmin] = useState({
@@ -110,4 +142,4 @@ const AddAdmin = () => {
   );
 };
 
-export default AddAdmin;
+export default EditAdmin;
