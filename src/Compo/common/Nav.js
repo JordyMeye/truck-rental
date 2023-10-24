@@ -48,6 +48,31 @@ const Nav = () => {
               </Link>
             </li>
 
+            <li className="nav-item">
+              <Link className="nav-link" to={"/add-brands"}>
+                  Add Brand
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to={"/view-brands"}>
+                  View Brands
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to={"/add-location"}>
+                  Add Location
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to={"/view-location"}>
+                  View Location
+              </Link>
+            </li>
+
+
           </ul>
         </div>
       </div>

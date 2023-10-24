@@ -48,6 +48,11 @@ function Navbar() {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link onClick={openNav} to="/brand">
+                brand
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -93,6 +98,18 @@ function Navbar() {
               {" "}
               <Link className="contact-link" to="/contact">
                 Contact
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link className="contact-link" to="/brand">
+                Brand
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link className="contact-link" to="/location">
+                Location
               </Link>
             </li>
           </ul>
