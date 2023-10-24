@@ -19,6 +19,10 @@ import Nav from "./Compo/common/Nav";
 import AdminView from "./Compo/admin/AdminView";
 import AddAdmin from "./Compo/admin/AddAdmin";
 import EditAdmin from "./Compo/admin/EditAdmin";
+  
+import TruckView from "./Compo/truck/TruckView";
+import AddTruck from "./Compo/truck/AddTruck";
+import EditTruck from "./Compo/truck/EditTruck";
 
 
 
@@ -134,6 +138,24 @@ function App() {
           path="/edit-admin/:id"
           element={<EditAdmin />}>
         </Route>
+
+            <Route
+						exact
+						path="/view-trucks"
+						element={<TruckView />}>
+            </Route>
+
+            <Route
+						exact
+						path="/add-truck"
+						element={<AddTruck />}>
+            </Route>
+
+            <Route
+						exact
+						path="/edit-truck/:id"
+						element={<EditTruck />}>
+            </Route>
 
       </Routes>
 
