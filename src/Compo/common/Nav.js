@@ -50,18 +50,7 @@
 //             <li className="nav-item">
 //               <Link
 //                 className="nav-link active"
-//                 aria-current="page"
-//                 to={"/view-trucks"}
-//               >
-//                 View All Truck
-//               </Link>
-//             </li>
-//             <li className="nav-item">
-//               <Link className="nav-link" to={"/add-truck"}>
-//                   Add New Truck
-//               </Link>
-//             </li>
-            
+
 
 //           </ul>
 //         </div>

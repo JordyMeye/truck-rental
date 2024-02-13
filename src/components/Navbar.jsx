@@ -55,6 +55,19 @@ function Navbar() {
                 Contact
               </Link>
             </li>
+            <li>
+              {" "}
+              <Link className="contact-link" to="/brand">
+                Brand
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link className="contact-link" to="/location">
+                Location
+              </Link>
+            </li>
+
           </ul>
           <div className="navbar__buttons">
             <Link className="navbar__buttons__sign-in" to="/login">
