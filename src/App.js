@@ -12,7 +12,7 @@ import AddCustomer from "./Compo/customer/AddCustomer";
 import EditCustomer from "./Compo/customer/EditCustomer";
 
 import CustomerViews from "./Compo/customer/CustomerViews";
-import Nav from "./Compo/common/Nav";
+// import Nav from "./Compo/common/Nav";
 
 import AdminView from "./Compo/admin/AdminView";
 import AddAdmin from "./Compo/admin/AddAdmin";
@@ -39,7 +39,7 @@ function App() {
   return (
     <>
       <Navbar />
-       <Nav /> 
+       {/* <Nav />  */}
       <Routes>
 
      
